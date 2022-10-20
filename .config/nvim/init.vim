@@ -16,7 +16,18 @@ endif
 
 filetype plugin on
 
+" Feline - statusline plugin
 lua require('feline').setup()
+
+# Sane spliting defaults
+set splitbelow
+set splitright
+
+" Sane split navigation keys: ex. Ctrl-J instead of Ctrl-W + J
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " Italic Support
 let &t_ZH="\e[3m"
