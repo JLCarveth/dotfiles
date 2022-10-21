@@ -19,7 +19,7 @@ filetype plugin on
 " Feline - statusline plugin
 lua require('feline').setup()
 
-# Sane spliting defaults
+" Sane spliting defaults
 set splitbelow
 set splitright
 
@@ -56,3 +56,5 @@ function! CheckBackspace() abort
     return !col || getline('.')[col - 1] =~# '\s'
 endfunction
 
+" Automatically close nvim if NERDTree is only thing open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
