@@ -51,10 +51,10 @@ set rtp+=/usr/local/opt/fzf
 autocmd VimEnter * NERDTree | wincmd p
 
 " Use <Tab> for trigger completion
-function! CheckBackspace() abort
-    let col = col('.')
-    return !col || getline('.')[col - 1] =~# '\s'
-endfunction
+"function! CheckBackspace() abort
+"    let col = col('.')
+"    return !col || getline('.')[col - 1] =~# '\s'
+"endfunction
 
 " Automatically close nvim if NERDTree is only thing open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
