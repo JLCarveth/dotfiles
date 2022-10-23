@@ -17,3 +17,5 @@
 [How I manage my dotfiles](https://drewdevault.com/2019/12/30/dotfiles.html)
 
 To use these configuration files on your machine, you should be able to clone this repo directly to your home directory.
+
+TODO: Write down my hotkeys here so I have an easy reference :P
