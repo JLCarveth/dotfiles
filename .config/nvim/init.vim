@@ -3,7 +3,7 @@ lua require('plugins')
 filetype plugin indent on
 syntax on
 set number
-colorscheme carbonfox
+colorscheme nightfox
 
 let term_program=$TERM_PROGRAM
 if term_program !=? 'Apple_Terminal'
