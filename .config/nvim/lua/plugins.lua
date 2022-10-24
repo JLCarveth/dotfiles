@@ -12,8 +12,21 @@ return require('packer').startup(function(use)
   use {
     'neoclide/coc.nvim', branch = 'release'
   }
-  use 'preservim/nerdtree'
+--  use 'preservim/nerdtree'
   -- You can alias plugin names
   use {'dracula/vim', as = 'dracula'}
   use "EdenEast/nightfox.nvim"
+  use {
+    'rmagatti/auto-session',
+    config = function ()
+      require("auto-session").setup {
+        log_level = "error",
+        auto_session_suppress_dirs = { "/", "~/", "~/Downloads", "~/Documents" },
+      }
+    end
+  }
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function() require("nvim-treesitter.install").update({ with_sync = true }) end,
+  }
 end)

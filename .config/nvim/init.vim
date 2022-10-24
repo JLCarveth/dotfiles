@@ -5,6 +5,9 @@ syntax on
 set number
 colorscheme nightfox
 
+" Treesitter config
+lua require('treesitter')
+
 let term_program=$TERM_PROGRAM
 if term_program !=? 'Apple_Terminal'
     set termguicolors
@@ -34,21 +37,21 @@ let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 
 " File Tree
-let g:netrw_banner=0
-let g:netrw_liststyle=3
-let g:netrw_browse_split=4
-let g:netrw_altv=1
-let g:netrw_winsize=20
-let g:netrw_keepdir=0
-let g:netrw_localcopydircmd='cp -r'
-let NERDTreeShowHidden=1
+"let g:netrw_banner=0
+"let g:netrw_liststyle=3
+"let g:netrw_browse_split=4
+"let g:netrw_altv=1
+"let g:netrw_winsize=20
+"let g:netrw_keepdir=0
+"let g:netrw_localcopydircmd='cp -r'
+"let NERDTreeShowHidden=1
 
 command! -nargs=0 Prettier :call CocAction('runCommand','prettier.formatFile')
 
 " Add fuzzy search
 set rtp+=/usr/local/opt/fzf
 
-autocmd VimEnter * NERDTree | wincmd p
+"autocmd VimEnter * NERDTree | wincmd p
 
 " Use <Tab> for trigger completion
 "function! CheckBackspace() abort
@@ -57,4 +60,4 @@ autocmd VimEnter * NERDTree | wincmd p
 "endfunction
 
 " Automatically close nvim if NERDTree is only thing open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif 
