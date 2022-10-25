@@ -21,3 +21,5 @@ export LESS=' -R -F '
 __git_files() {
     _wanted files expl 'local files' _files
 }
+
+alias mux='tmuxinator default'

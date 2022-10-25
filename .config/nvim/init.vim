@@ -6,7 +6,6 @@ set number
 colorscheme nightfox
 
 " Treesitter config
-lua require('treesitter')
 lua require('lualine-config')
 
 let term_program=$TERM_PROGRAM
