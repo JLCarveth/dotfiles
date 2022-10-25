@@ -7,7 +7,10 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use 'neovim/nvim-lspconfig'
-  use 'feline-nvim/feline.nvim'
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
   use 'ryanoasis/vim-devicons'
   use {
     'neoclide/coc.nvim', branch = 'release'
@@ -29,4 +32,5 @@ return require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = function() require("nvim-treesitter.install").update({ with_sync = true }) end,
   }
+  use 'lewis6991/gitsigns.nvim'
 end)

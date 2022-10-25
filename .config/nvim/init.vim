@@ -7,6 +7,7 @@ colorscheme nightfox
 
 " Treesitter config
 lua require('treesitter')
+lua require('lualine-config')
 
 let term_program=$TERM_PROGRAM
 if term_program !=? 'Apple_Terminal'
@@ -18,9 +19,6 @@ else
 endif
 
 filetype plugin on
-
-" Feline - statusline plugin
-lua require('feline').setup()
 
 " Sane spliting defaults
 set splitbelow
