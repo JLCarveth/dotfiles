@@ -1,6 +1,8 @@
 " Set our <leader> binding to 89
 let mapleader = "89"
 
+" Enable language server
+lua require'lspconfig'.tsserver.setup{}
 set t_Co=256
 lua require('plugins')
 filetype plugin indent on
