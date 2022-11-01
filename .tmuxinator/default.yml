@@ -47,7 +47,8 @@ project_root: .
 
 windows:
   - editor:
-      layout: 5df7,210x54,0,0[210x32,0,0,43,210x21,0,33{105x21,0,33,44,104x21,106,33,45}]
+      layout: 682c,210x54,0,0[210x36,0,0,3,210x17,0,37{105x17,0,37,4,104x17,106,37,5}]
+      #layout: 5df7,210x54,0,0[210x32,0,0,43,210x21,0,33{105x21,0,33,44,104x21,106,33,45}]
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
