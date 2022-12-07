@@ -7,14 +7,12 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use 'neovim/nvim-lspconfig'
+  use { 'neoclide/coc.nvim', branch = 'release' }
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
   use 'ryanoasis/vim-devicons'
-  use {
-    'neoclide/coc.nvim', branch = 'release'
-  }
 --  use 'preservim/nerdtree'
   -- You can alias plugin names
   use {'dracula/vim', as = 'dracula'}
@@ -33,4 +31,24 @@ return require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim', tag='0.1.0',
     requires = {{ 'nvim-lua/plenary.nvim' }}
   }
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end,
+  }
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  }
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  }
+  use 'neoclide/vim-jsx-improve'
 end)
