@@ -107,5 +107,29 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias t2="tree -L 2 ."
+alias t3="tree -L 3 ."
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Add ~/Applications to PATH
+export PATH="$HOME/Applications:$PATH"
+export PATH="$PATH:$HOME/.cargo/bin"
+
+# Mount External Harddrives
+udisksctl mount -b /dev/disk/by-label/JLC6TB &> /dev/null
+udisksctl mount -b /dev/disk/by-label/Media &> /dev/null
+
+export DENO_INSTALL="/home/jlcarveth/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+# zsh history
+export HISTFILE="$HOME/.zsh_history"
+
+# For direnv
+eval "$(direnv hook zsh)"
