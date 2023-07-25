@@ -8,6 +8,9 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export DENO=$HOME/.deno/bin
+export PATH=$DENO:$PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -109,3 +112,40 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Hook direnv
+eval "$(direnv hook zsh)"
+
+# Aliases
+alias ll="ls -lah"
+
+# Integrate fd with fzf
+export FZF_DEFAULT_COMMAND='fd --type file'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export EDITOR=nvim
+
+# Alias for pasting files to the server
+alias paste='curl https://paste.jlcarveth.dev/api/paste -H "X-Access-Token: $TOKEN" -X POST --data-binary @-'
+# A function for getting a fresh login token for Paste
+plogin() {
+  export TOKEN=$(curl https://paste.jlcarveth.dev/api/login -X POST -H "Content-Type: application/json" -d '{"email":"jlcarveth@gmail.com","password":"HobgoblinFarm212"}')
+}
+# A function for getting a paste by UUID
+getpaste() {
+  curl https://paste.jlcarveth.dev/api/$1 -H "X-Access-Token: $TOKEN"
+}
+
+# Get all saved pastes
+getallpastes() {
+  curl https://paste.jlcarveth.dev/api/paste -H "X-Access-Token: $TOKEN"
+}
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+# Sketchybar - Update packages after running brew commands
+function brew() {
+  command brew "$@"
+
+  if [[ $* =~ "upgrade" ]] || [[ $* =~ "update" ]] || [[ $* =~ "outdated" ]]; then
+    sketchybar --trigger brew_update
+  fi
+}

@@ -5,14 +5,14 @@ let mapleader = "89"
 " lua require'lspconfig'.denols.setup{}
 set t_Co=256
 lua require('plugins')
-set smartindent
+"set smartindent
 "filetype plugin indent on
 "filetype plugin on
 "syntax on
 set number
 
 if strftime("%H") < 18
-	colorscheme dayfox
+	colorscheme dawnfox
 else
 	colorscheme nightfox
 endif
@@ -22,7 +22,7 @@ lua require('lualine-config')
 " Telescope config
 lua require('telescope-config')
 " Treesitter config
-lua require('treesitter')
+"lua require('treesitter')
 " LSP Configs
 " lua require('lspconfs')
 
@@ -112,3 +112,24 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
+" Treat .zpl files as .c files since they have similar syntax
+autocmd BufEnter *.zpl :setlocal filetype=c
+
+" Add `:Format` command to format the current buffer
+command! -nargs=0 Format :call CocActionAsync('format')
+" Add `:Fold` command to fold the current buffer
+command! -nargs=? Fold :call CocAction('fold', <f-args>)
+" Add `:OR` command for organizing imports in the current buffer
+command! -nargs=0 OR :call CocActionAsync('runCommand', 'editor.action.organizeImport')
+
+
+lua << EOF
+local opts = { noremap=true, silent=true }
+local function quickfix()
+    vim.lsp.buf.code_action({
+        filter = function(a) return a.isPreffered end,
+	apply = true
+    })
+end
+vim.keymap.set('n', '<leader>qf', quickfix, opts);
+EOF
