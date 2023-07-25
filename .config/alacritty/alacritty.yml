@@ -6,8 +6,8 @@ window:
     columns: 85
     lines: 25
   padding:
-    x: 10
-    y: 10
+    x: 5
+    y: 5
   dynamic_padding: true
   decorations: buttonless #full #transparent
   opacity: 0.9

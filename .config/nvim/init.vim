@@ -5,16 +5,12 @@ let mapleader = "89"
 " lua require'lspconfig'.denols.setup{}
 set t_Co=256
 lua require('plugins')
-"set smartindent
-"filetype plugin indent on
-"filetype plugin on
-"syntax on
 set number
 
 if strftime("%H") < 18
-	colorscheme dawnfox
+	colorscheme catppuccin-latte
 else
-	colorscheme nightfox
+	colorscheme catppuccin-mocha
 endif
 
 " Lualine config
@@ -49,8 +45,6 @@ nnoremap <C-H> <C-W><C-H>
 " Italic Support
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
-
-command! -nargs=0 Prettier :call CocAction('runCommand','prettier.formatFile')
 
 " Add fuzzy search
 set rtp+=/usr/local/opt/fzf
@@ -133,3 +127,4 @@ local function quickfix()
 end
 vim.keymap.set('n', '<leader>qf', quickfix, opts);
 EOF
+

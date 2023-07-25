@@ -3,7 +3,7 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function(use)
+require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use 'neovim/nvim-lspconfig'
@@ -13,10 +13,16 @@ return require('packer').startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
   use 'ryanoasis/vim-devicons'
---  use 'preservim/nerdtree'
-  -- You can alias plugin names
-  use {'dracula/vim', as = 'dracula'}
-  use "EdenEast/nightfox.nvim"
+  use {
+    "catppuccin/nvim", as = "catppuccin",
+    config = function()
+      require("catppuccin").setup({ 
+        transparent_background = true,
+        background = { light = "latte", dark = "macchiato" }
+      })
+    end,
+    run = ":CatppuccinCompile",
+  }
   use {
     'rmagatti/auto-session',
     config = function ()
@@ -46,3 +52,4 @@ return require('packer').startup(function(use)
   }
   use 'neoclide/vim-jsx-improve'
 end)
+

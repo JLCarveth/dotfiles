@@ -86,6 +86,12 @@ _G.packer_plugins = {
     path = "/Users/jlcarveth/.local/share/nvim/site/pack/packer/start/auto-session",
     url = "https://github.com/rmagatti/auto-session"
   },
+  catppuccin = {
+    config = { "\27LJ\2\nˆ\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\15background\1\0\2\nlight\nlatte\tdark\14macchiato\1\0\1\27transparent_background\2\nsetup\15catppuccin\frequire\0" },
+    loaded = true,
+    path = "/Users/jlcarveth/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["coc.nvim"] = {
     loaded = true,
     path = "/Users/jlcarveth/.local/share/nvim/site/pack/packer/start/coc.nvim",
@@ -105,11 +111,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jlcarveth/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
-  },
-  ["nightfox.nvim"] = {
-    loaded = true,
-    path = "/Users/jlcarveth/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
-    url = "https://github.com/EdenEast/nightfox.nvim"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -163,6 +164,10 @@ time([[Config for Comment.nvim]], false)
 time([[Config for auto-session]], true)
 try_loadstring("\27LJ\2\n•\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\31auto_session_suppress_dirs\1\5\0\0\6/\a~/\16~/Downloads\16~/Documents\1\0\1\14log_level\nerror\nsetup\17auto-session\frequire\0", "config", "auto-session")
 time([[Config for auto-session]], false)
+-- Config for: catppuccin
+time([[Config for catppuccin]], true)
+try_loadstring("\27LJ\2\nˆ\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\15background\1\0\2\nlight\nlatte\tdark\14macchiato\1\0\1\27transparent_background\2\nsetup\15catppuccin\frequire\0", "config", "catppuccin")
+time([[Config for catppuccin]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
