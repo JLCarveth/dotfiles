@@ -8,9 +8,9 @@ lua require('plugins')
 set number
 
 if strftime("%H") < 18
-	colorscheme catppuccin-latte
+  colorscheme catppuccin-latte
 else
-	colorscheme catppuccin-mocha
+  colorscheme catppuccin-mocha
 endif
 
 " Lualine config
@@ -128,3 +128,5 @@ end
 vim.keymap.set('n', '<leader>qf', quickfix, opts);
 EOF
 
+" Ensure Catppuccin is transparent
+"autocmd VimEnter * CatppuccinCompile
