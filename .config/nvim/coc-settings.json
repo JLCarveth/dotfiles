@@ -1,5 +1,0 @@
-{
-    "suggest.noselect" : true,
-    "diagnostic.checkCurrentLine" : true,
-    "coc.preferences.formatOnSaveFiletypes" : ["c", "javascript", "typescript", "vim", "lua"]
-}
