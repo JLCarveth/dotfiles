@@ -13,6 +13,8 @@ exec --no-startup-id /home/jlcarveth/.fehbg
 exec --no-startup-id picom -b
 # Statusbar via Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh --forest
+# Run Xmodmap
+exec --no-startup-id xmodmap $HOME/.Xmodmap
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -27,8 +29,8 @@ bindsym $mod+d exec --no-startup-id $HOME/.config/rofi/launchers/type-6/launcher
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 
 # Mod+L to lock the screen
-#bindsym $mod+l exec --no-startup-id $HOME/.config/i3/lockscreen.sh
-bindsym $mod+l exec --no-startup-id i3lock -c 99999988 -i /home/jlcarveth/Wallpapers/wallhaven-8586my.png -F -M --clock
+bindsym $mod+l exec --no-startup-id $HOME/.config/i3/lockscreen.sh
+#bindsym $mod+l exec --no-startup-id i3lock -c 99999988 -i /home/jlcarveth/Wallpapers/wallhaven-8586my.png -F -M --clock
 
 # change focus
 bindsym $mod+j focus left

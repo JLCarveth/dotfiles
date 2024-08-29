@@ -35,6 +35,7 @@ alias ll="ls -lah"
 alias steam="steam-screensaver-fix-runtime"
 alias neofetch="clear && neofetch"
 alias nf="neofetch"
+alias ff="clear && fastfetch -c examples/13"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
