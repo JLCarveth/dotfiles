@@ -1,0 +1,24 @@
+[core]
+	pager = less -F -X
+[user]
+	name = John Carveth
+	email = jlcarveth@gmail.com
+	signingkey = 7A929C234A487C2B
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = master
+[tag]
+	sort = version:refname
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+[push]
+	followTags = true
+	autoSetupRemote = true
+[help]
+	autocorrect = prompt
+[pull]
+	rebase = false
+[color]
+	ui = always
