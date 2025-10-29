@@ -1,6 +1,7 @@
 alias ff="clear && fastfetch -c examples/13"
 alias ll="ls -lah --color=always"
 alias vim=nvim
+alias g=git
 
 alias bat="batcat --theme=\"Catppuccin Latte\""
 
@@ -8,8 +9,7 @@ alias pbcopy='xclip -r -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias pbedit='pbpaste > /tmp/clipboard-edit.txt && $EDITOR /tmp/clipboard-edit.txt && cat /tmp/clipboard-edit.txt | pbcopy && rm /tmp/clipboard-edit.txt'
 
-alias t2="tree -C -L 2 -I \"node_modules/\""
-alias t2l="tree -C -L 2 -I \"node_modules/\" | less"
+alias t2="tree -C -L 2 -I \"node_modules/\" | less"
 alias t3="tree -C -L 3 -I \"node_modules/\""
 
 alias rg="rg -L --no-ignore-vcs"

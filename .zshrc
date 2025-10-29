@@ -15,6 +15,10 @@ if [[ ":$FPATH:" != *":/home/jlcarveth/.zsh/completions:"* ]]; then export FPATH
 # Add $HOME/bin to PATH
 export PATH=$HOME/bin:$PATH
 
+export DEBFULLNAME="John L. Carveth"
+export DEBEMAIL="johnc@eastelectricalsupply.com"
+export BROWSER=firefox
+
 expl() {
     if [ -z "$1" ]; then
         echo "Usage: expl MYPATH"
@@ -78,7 +82,7 @@ setopt pushdminus
 
 # less source highlighting
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
-export LESS=' -R '
+export LESS=' -FR '
 
 # For WSL2... handle paths when creating new panes
 keep_current_path() {
@@ -95,6 +99,7 @@ export BROWSER=false
 
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+bindkey '^H' backward-kill-word
 
 source ~/.zsh_aliases
 
